@@ -1,18 +1,25 @@
-<nav class="top-bar row" ng-controller="NavbarCtrl">
+<nav class="top-bar row">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="https://github.com/Swiip/generator-gulp-angular">Gulp & Angular</a></h1>
+      <h1>Metric Squire</h1>
     </li>
   </ul>
 
   <section class="top-bar-section">
     <ul class="right">
-      <li class="active"><a ng-href="#">Home</a></li>
-      <li><a ng-href="#">About</a></li>
-      <li><a ng-href="#">Contact</a></li>
+      <li class="active">
+        <button ng-show="!vm.global.isAuthed" ng-click="vm.global.popupAuth()">Connect to Trello</button>
+        <button ng-show="vm.global.isAuthed" ng-click="vm.global.logout()">Disconnect Trello</button>
+      </li>
+      <!-- <li><a ng-href="#">About</a></li>
+      <li><a ng-href="#">Contact</a></li> -->
     </ul>
     <ul class="left">
-      <li><a ng-href="#">Current date: {{ date | date:'yyyy-MM-dd' }}</a></li>
+        <li>
+            <a href="#">{{vm.global.me.fullName}}</a>
+        </li>
+        <li>
+        </li>
     </ul>
   </section>
 </nav>

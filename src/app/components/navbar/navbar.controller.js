@@ -1,6 +1,21 @@
 'use strict';
 
-angular.module('metricSquire')
-  .controller('NavbarCtrl', function ($scope) {
-    $scope.date = new Date();
-  });
+(function () {
+    angular
+        .module('metricSquire')
+        .controller('NavbarCtrl', NavbarCtrl);
+
+    NavbarCtrl.$inject = [
+        'Global'
+    ];
+
+    function NavbarCtrl(
+        Global
+    ) {
+
+        var vm = this;
+
+        vm.global = Global;
+    }
+
+})();

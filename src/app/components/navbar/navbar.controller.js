@@ -3,7 +3,7 @@
 (function () {
     angular
         .module('metricSquire')
-        .controller('NavbarCtrl', NavbarCtrl);
+        .controller('NavbarController', NavbarCtrl);
 
     NavbarCtrl.$inject = [
         'Global'

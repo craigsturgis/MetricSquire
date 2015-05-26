@@ -1,25 +1,29 @@
-<nav class="top-bar row">
-  <ul class="title-area">
-    <li class="name">
-      <h1>Metric Squire</h1>
-    </li>
-  </ul>
+<div class="container">
+    <nav class="top-bar row">
+        <ul class="title-area">
+            <li class="name">
+                <a ui-sref="root.nav">
+                    <h1>Metric Squire</h1>
+                </a>
+            </li>
+        </ul>
 
-  <section class="top-bar-section">
-    <ul class="right">
-      <li class="active">
-        <button ng-show="!vm.global.isAuthed" ng-click="vm.global.popupAuth()">Connect to Trello</button>
-        <button ng-show="vm.global.isAuthed" ng-click="vm.global.logout()">Disconnect Trello</button>
-      </li>
-      <!-- <li><a ng-href="#">About</a></li>
-      <li><a ng-href="#">Contact</a></li> -->
-    </ul>
-    <ul class="left">
-        <li>
-            <a href="#">{{vm.global.me.fullName}}</a>
-        </li>
-        <li>
-        </li>
-    </ul>
-  </section>
-</nav>
+        <section class="top-bar-section">
+            <ul class="right">
+                <li class="active">
+                    <button ng-show="!vm.global.isAuthed" ng-click="vm.global.popupAuth()">Connect to Trello</button>
+                    <button ng-show="vm.global.isAuthed" ng-click="vm.global.logout()">Disconnect Trello</button>
+                </li>
+                <!-- <li><a ng-href="#">About</a></li>
+                <li><a ng-href="#">Contact</a></li> -->
+            </ul>
+            <ul class="left">
+                <li>
+                    <a href="#">{{vm.global.me.fullName}}</a>
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+    <div ui-view></div>
+</div>

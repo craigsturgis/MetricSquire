@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="small-12 text-center columns">
+        <div class="panel">
+            <a ng-href="{{vm.card.shortUrl}}" target="_"><h1>{{vm.card.name}}</h1></a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div ng-repeat="button in vm.voteButtons"
+        class="small-2 columns">
+        <button ng-click="vm.registerVote(button.value)"
+            class="active">
+            {{button.label}}
+        </button>
+    </div>
+</div>
+
+<div class="row">
+
+</div>

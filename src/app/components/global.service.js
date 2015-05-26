@@ -21,15 +21,15 @@
         singleton.logout = logout;
 
         Trello.authorize({
-            interactive:false,
-            success: onAuthorize
+            interactive: false,
+            success: onAuthorize,
+            error: clearAuth,
         });
 
         function onAuthorize() {
             singleton.isAuthed = true;
             Trello.me().then(function(member){
                 singleton.me = member;
-                console.dir(singleton);
             });
         }
 
@@ -44,6 +44,10 @@
 
         function logout() {
             Trello.deauthorize();
+            clearAuth();
+        }
+
+        function clearAuth() {
             singleton.isAuthed = false;
             singleton.me = null;
         }

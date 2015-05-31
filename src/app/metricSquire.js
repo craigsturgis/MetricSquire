@@ -9,12 +9,16 @@
             'ngResource',
             'ui.router',
             'mm.foundation',
-            'estimates'
+            'estimates',
+            'lodash',
         ]);
 
     angular
-        .module('estimates', ['trello']);
+        .module('estimates', ['trello', 'lodash', 'angularMoment']);
 
     angular
         .module('trello', []);
+
+    angular
+        .module('lodash', []);
 })();

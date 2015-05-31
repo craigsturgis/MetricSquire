@@ -12,7 +12,7 @@
                 abstract: true,
                 resolve: {
                     readyCards: function(Trello) {
-                        return Trello.estimateCards('54eb460a4d5ce2e8acd49cd9', {});
+                        return Trello.estimateCards('556b2fa7e49b7bea50cc8303', {});
                     }
                 },
                 template: '<div ui-view="estimates"></div>',
@@ -31,7 +31,18 @@
                 resolve: {
                     card: function(Trello, $stateParams) {
                         return Trello.cardDetail($stateParams.shortLink, {});
-                    }
+                    },
+                    checkLists: function(Trello, $stateParams) {
+                        return Trello.get(cardApiPath('checklists', $stateParams));
+                    },
+                    comments: function(Trello, $stateParams) {
+                        return Trello.get(cardApiPath('actions', $stateParams), {
+                            filter: 'commentCard'
+                        });
+                    },
+                    votes: function(Trello, $stateParams) {
+                        return Trello.get(cardApiPath('membersVoted', $stateParams));
+                    },
                 },
                 views: {
                     estimates: {
@@ -40,6 +51,15 @@
                     }
                 },
             });
+
+        function cardApiPath(verb, $stateParams) {
+            return [
+                'cards/',
+                $stateParams.shortLink,
+                '/',
+                verb,
+            ].join('');
+        }
     }
 
 })();

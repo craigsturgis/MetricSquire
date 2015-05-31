@@ -7,14 +7,24 @@
 
     EstimateCardController.$inject = [
         'card',
+        'checkLists',
+        'comments',
+        'votes',
     ];
 
-    function EstimateCardController(card) {
+    function EstimateCardController(
+        card,
+        checkLists,
+        comments,
+        votes
+    ) {
 
         var vm = this;
 
         vm.card = card;
-        console.log(card);
+        vm.checkLists = checkLists;
+        vm.votes = votes;
+        vm.comments = comments;
 
         vm.voteButtons = [
             {

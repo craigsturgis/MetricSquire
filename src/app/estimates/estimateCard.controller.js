@@ -59,6 +59,14 @@
                 label: '21',
                 value: 21,
             },
+            {
+                label: '???',
+                altValue: '???',
+            },
+            {
+                label: '(╯°□°）╯︵ ┻━┻',
+                altValue: 'flip',
+            },
         ];
     }
 

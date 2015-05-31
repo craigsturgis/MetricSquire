@@ -81,6 +81,17 @@
                 });
 
                 return def.promise;
+            },
+            get: function(path, params) {
+                var def = $q.defer();
+
+                TrelloClient.get(path, params || {}, function(response) {
+                    def.resolve(response);
+                }, function(err) {
+                    def.reject(err);
+                });
+
+                return def.promise;
             }
         };
     }
